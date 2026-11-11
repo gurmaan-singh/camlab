@@ -1,0 +1,21 @@
+[project]
+name = "camlab"
+version = "1.0.0"
+description = "Camera calibration, pose estimation and two-view geometry from scratch in NumPy, checked against synthetic ground truth."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["numpy>=1.24", "matplotlib>=3.7"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["camlab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
