@@ -15,7 +15,7 @@ That closed-form answer ignores lens distortion and minimises an algebraic error
 
 ## Conditioning
 
-**Normalising the points.** The direct linear transform for a homography is badly conditioned on raw pixel coordinates (values around 1000 next to 1). Both point sets are first moved to zero mean and scaled to a mean distance of the square root of 2 (Hartley's normalisation), and the result is mapped back. Without it the noiseless homography test did not reach 1e-8. The same applies to the 3D points in the DLT for pose.
+**Normalising the points.** The direct linear transform for a homography is badly conditioned on raw pixel coordinates (values around 1000 next to 1). Both point sets are first moved to zero mean and scaled to a mean distance of the square root of 2 (Hartley's normalisation), and the result is mapped back. The same is done to the 3D points in the DLT for pose.
 
 **Scaling the homographies.** The linear system for `B` mixes entries of very different sizes. The homographies are first expressed in pixel coordinates divided by the image size, and `K` is scaled back afterwards.
 
